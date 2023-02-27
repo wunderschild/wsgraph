@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../chk/.idea/chk.iml" filepath="$PROJECT_DIR$/../chk/.idea/chk.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/wsgraph.iml" filepath="$PROJECT_DIR$/.idea/wsgraph.iml" />
     </modules>
   </component>
