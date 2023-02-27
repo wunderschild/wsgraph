@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af3bc074-5a45-4cd8-926a-b7be65b826b7" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IgHCAg0Z42YT8SPNYzCN6Kh5s9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.last.introduce.field.readonly&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/karl/WebstormProjects/wsgraph/src/default&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/karl/WebstormProjects/wsgraph/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/karl/WebstormProjects/wsgraph/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/default" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/util/overlay" />
+      <recent name="$PROJECT_DIR$/src/util" />
+      <recent name="$PROJECT_DIR$/src/plugins/overlay/component" />
+      <recent name="$PROJECT_DIR$/src/base" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:es:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:es:fix" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:es:strict" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:es:strict" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:ts:compile" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:ts:compile" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.lint:ts:compile" />
+        <item itemvalue="npm.lint:es:strict" />
+        <item itemvalue="npm.lint:es:fix" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af3bc074-5a45-4cd8-926a-b7be65b826b7" name="Changes" comment="" />
+      <created>1670596175356</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670596175356</updated>
+      <workItem from="1670596176418" duration="12000" />
+      <workItem from="1670596194262" duration="1352000" />
+      <workItem from="1671190680664" duration="4000" />
+      <workItem from="1672228964835" duration="2630000" />
+      <workItem from="1674134834293" duration="12000" />
+      <workItem from="1675175227843" duration="36000" />
+      <workItem from="1675856409570" duration="2598000" />
+      <workItem from="1675859014583" duration="5191000" />
+      <workItem from="1675948393979" duration="3854000" />
+      <workItem from="1676285102771" duration="4663000" />
+      <workItem from="1676381835720" duration="1319000" />
+      <workItem from="1676387066347" duration="2452000" />
+      <workItem from="1676389524788" duration="656000" />
+      <workItem from="1676390187480" duration="3677000" />
+      <workItem from="1676476545090" duration="1384000" />
+      <workItem from="1676477936358" duration="5119000" />
+      <workItem from="1676557412114" duration="5044000" />
+      <workItem from="1676976106182" duration="1696000" />
+      <workItem from="1676987485080" duration="522000" />
+      <workItem from="1676988008422" duration="7249000" />
+      <workItem from="1677070070032" duration="6773000" />
+      <workItem from="1677162314962" duration="9164000" />
+      <workItem from="1677510202089" duration="4335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/utils/option.d.ts" />
+        <option value="$PROJECT_DIR$/src/utils/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/controls/navHandler.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/controls/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/controls/component/GraphControlsContainer.d.ts" />
+        <option value="$PROJECT_DIR$/src/App.d.ts" />
+        <option value="$PROJECT_DIR$/src/main.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/autopin/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/context/menuDSL.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/context/plugin.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/context/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/context/eventbus.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/context/component/ContextMenuContainer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/usePatchedDataset.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/plugin.d.ts" />
+        <option value="$PROJECT_DIR$/src/utils/overlay/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/utils/overlay/controller.d.ts" />
+        <option value="$PROJECT_DIR$/src/utils/overlay/OverlayCanvas.d.ts" />
+        <option value="$PROJECT_DIR$/src/default/BasicContextMenuRenderer.d.ts" />
+        <option value="$PROJECT_DIR$/src/default/BasicControlsRenderer.d.ts" />
+        <option value="$PROJECT_DIR$/src/plugins/zoomlimit/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/component/GraphComponent.d.ts" />
+      </list>
+    </option>
+  </component>
+</project>

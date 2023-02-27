@@ -1,0 +1,111 @@
+---
+plugins:
+  - import
+  - lodash
+  - promise
+  - react
+extends:
+  - eslint:recommended
+  - airbnb-typescript
+  - plugin:lodash/recommended
+  - plugin:promise/recommended
+  - prettier
+
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: ./tsconfig.json
+
+env:
+  node: true
+  es6: true
+  es2020: true
+  browser: true
+
+settings:
+  import/resolver:
+    node: { }
+
+rules:
+  class-methods-use-this: off
+
+  key-spacing:
+    - error
+    - mode: minimum
+      afterColon: true
+      beforeColon: false
+  arrow-parens:
+    - error
+    - as-needed
+
+  object-shorthand:
+    - error
+    - properties
+  quote-props:
+    - error
+    - as-needed
+    - numbers: true
+
+  no-underscore-dangle:
+    - error
+    - allow: [ __typename ]
+
+  import/extensions:
+    - error
+    - ignorePackages
+    - js: never
+      jsx: never
+      ts: never
+      tsx: never
+
+  no-multiple-empty-lines:
+    - error
+    - max: 2
+
+  lodash/prefer-constant: off
+  lodash/import-scope: [ error, member ]
+  lodash/prefer-lodash-method: off
+
+  react/prop-types: off
+  react/jsx-props-no-spreading: off
+  react/no-did-update-set-state: off
+  react/jsx-props-no-multi-spaces: error
+
+  react/jsx-no-useless-fragment:
+    - error
+    - allowExpressions: true
+  react/jsx-indent-props:
+    - error
+    - 2
+  react/jsx-filename-extension:
+    - error
+    - extensions: [ '.js', '.jsx', '.ts', '.tsx' ]
+  react/jsx-curly-brace-presence:
+    - error
+    - props: always
+      children: ignore
+
+  react/static-property-placement:
+    - error
+    - 'static public field'
+
+  jsx-a11y/click-events-have-key-events: off
+  jsx-a11y/no-static-element-interactions: off
+
+  no-useless-constructor: off
+  '@typescript-eslint/no-useless-constructor': error
+  '@typescript-eslint/no-use-before-define': off
+  '@typescript-eslint/indent': off
+
+overrides:
+  - files:
+      - 'start-dev.js'
+      - '**/*.config.js'
+      - 'config/webpack/*'
+    extends:
+      - eslint:recommended
+  - files:
+      - '**/*.ts'
+      - '**/*.tsx'
+    extends:
+      - 'plugin:@typescript-eslint/recommended'
+      - 'plugin:@typescript-eslint/recommended-requiring-type-checking'
