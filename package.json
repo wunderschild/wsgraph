@@ -63,6 +63,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@microsoft/api-extractor": "^7.34.4",
     "@types/classnames": "^2.3.1",
     "@types/lodash-es": "^4.17.6",
