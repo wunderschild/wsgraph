@@ -12,3 +12,5 @@ dist
 decl
 dist-ssr
 *.local
+
+.idea/workspace.xml

@@ -11,3 +11,4 @@ export type {
   VisConfig,
 } from 'base/types';
 export type { TypeHolder } from 'utils';
+export type { Position2D } from 'utils/overlay';
