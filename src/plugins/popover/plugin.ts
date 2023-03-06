@@ -69,8 +69,6 @@ class PopoverPlugin<L extends PopoversConfig> implements IPopoverPlugin<L> {
   }
 
   onContextChanged(context: PopoversContext<L>) {
-    console.debug('popover onContextChanged');
-
     const toClose = difference(
       this.context?.displayedPopovers,
       context.displayedPopovers,

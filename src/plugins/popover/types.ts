@@ -1,6 +1,8 @@
 import React from 'react';
 import { Position2D } from 'utils/overlay';
 
+/* eslint @typescript-eslint/no-explicit-any: 0 */
+
 export interface Popover<N extends string, T> {
   id: N;
   render: (args: T) => React.ReactNode;

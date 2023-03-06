@@ -2,11 +2,13 @@ import { buildGraph } from 'base/builder';
 import { ObjectId, ObjectWithId } from 'base/types';
 import BasicContextMenuRenderer from 'default/BasicContextMenuRenderer';
 import BasicControlsRenderer from 'default/BasicControlsRenderer';
-import { uniqueId } from 'lodash-es';
+import { random, uniqueId } from 'lodash-es';
 import { AutopinPlugin } from 'plugins/autopin';
 import { action, ContextMenuPlugin, divider, menu } from 'plugins/context';
 import { GraphControlsPlugin } from 'plugins/controls';
+import { PopoverPlugin, popovers, PopoversContext } from 'plugins/popover';
 import { useCallback, useState } from 'react';
+import { Position2D } from 'utils/overlay';
 import './App.css';
 
 interface TestNode {
@@ -27,16 +29,31 @@ const menuConfig = menu({
   ],
 });
 
-const contextMenu = new ContextMenuPlugin(menuConfig, BasicContextMenuRenderer);
+const contextMenu = () =>
+  new ContextMenuPlugin(menuConfig, BasicContextMenuRenderer);
 
-const controls = new GraphControlsPlugin(
-  {
-    zoomLimits: [0.1, 10.0],
-  },
-  BasicControlsRenderer,
-);
+const controls = () =>
+  new GraphControlsPlugin(
+    {
+      zoomLimits: [0.1, 10.0],
+    },
+    BasicControlsRenderer,
+  );
 
-const Graph = buildGraph<TestNode, ObjectWithId, undefined>({
+const popoversConfig = popovers({})
+  .popover({
+    id: 'newNode',
+    render: (name: string) => (
+      <div style={{ backgroundColor: 'red', padding: 10, color: 'white' }}>
+        New node added {name}!
+      </div>
+    ),
+  })
+  .build();
+
+type GraphContext = PopoversContext<typeof popoversConfig>;
+
+const Graph = buildGraph<TestNode, ObjectWithId, GraphContext>({
   physics: {
     enabled: true,
     stabilization: false,
@@ -45,12 +62,22 @@ const Graph = buildGraph<TestNode, ObjectWithId, undefined>({
 })
   .plugin(contextMenu)
   .plugin(controls)
-  .plugin(new AutopinPlugin())
+  .plugin(() => new AutopinPlugin())
+  .plugin(() => new PopoverPlugin(popoversConfig))
   .build();
+
+const randomPosition = (min: Position2D, max: Position2D) => ({
+  x: random(min.x, max.x),
+  y: random(min.y, max.y),
+});
 
 const App = () => {
   const [nodes, setNodes] = useState<TestNode[]>([]);
   const [name, setName] = useState<string>('');
+
+  const [ctx, setCtx] = useState<GraphContext>({
+    displayedPopovers: [],
+  });
 
   const addNode = useCallback(() => {
     const newNode = {
@@ -58,6 +85,16 @@ const App = () => {
       fixed: false,
       label: name,
     };
+
+    setCtx({
+      displayedPopovers: [
+        {
+          id: 'newNode',
+          position: randomPosition({ x: 100, y: 100 }, { x: 350, y: 350 }),
+          args: name,
+        },
+      ],
+    });
 
     setNodes(prevNodes => [...prevNodes, newNode]);
   }, [name]);
@@ -107,7 +144,7 @@ const App = () => {
         <Graph
           edges={[]}
           nodes={nodes}
-          pluginContext={undefined}
+          pluginContext={ctx}
           wrapperClassName={'wgApp'}
         />
       </div>
