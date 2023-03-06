@@ -22,24 +22,28 @@ export interface GraphComponentProps<
   pluginContext: PluginContext;
 }
 
-const createGraphComponent =
-  <
-    NodeType extends ObjectWithId,
-    EdgeType extends ObjectWithId,
-    PluginContext,
-  >({
-    config,
-    plugins,
-  }: GraphInitializer<NodeType, EdgeType, PluginContext>): React.FC<
-    GraphComponentProps<NodeType, EdgeType, PluginContext>
-  > =>
-  ({
+const createGraphComponent = <
+  NodeType extends ObjectWithId,
+  EdgeType extends ObjectWithId,
+  PluginContext,
+>({
+  config,
+  plugins: pluginFactories,
+}: GraphInitializer<NodeType, EdgeType, PluginContext>): React.FC<
+  GraphComponentProps<NodeType, EdgeType, PluginContext>
+> => {
+  return ({
     containerClassName,
     wrapperClassName,
     nodes: nodesIn,
     edges: edgesIn,
     pluginContext,
   }) => {
+    const plugins = useMemo(() => {
+      console.log('instantiate plugins');
+      return pluginFactories.map(f => f());
+    }, [pluginFactories]);
+
     const container = useRef<HTMLDivElement>(null);
     const vis = useRef<Network>();
 
@@ -93,6 +97,14 @@ const createGraphComponent =
     }, [vis]);
     // endregion
 
+    useEffect(() => {
+      for (const plugin of plugins) {
+        if (!isNil(plugin.onContextChanged)) {
+          plugin.onContextChanged(pluginContext);
+        }
+      }
+    }, [pluginContext]);
+
     const onDatasetChanged = useCallback(
       (capturePartial: Partial<DatasetCapture<NodeType, EdgeType>>) => {
         const capture = {
@@ -134,5 +146,6 @@ const createGraphComponent =
       ],
     );
   };
+};
 
 export default createGraphComponent;

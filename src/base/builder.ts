@@ -10,7 +10,7 @@ export interface GraphInitializer<
 > {
   config: VisConfig;
 
-  plugins: Plugin<string, NodeType, EdgeType, PluginContext>[];
+  plugins: (() => Plugin<string, NodeType, EdgeType, PluginContext>)[];
 }
 
 class GraphBuilder<
@@ -23,7 +23,7 @@ class GraphBuilder<
   ) {}
 
   plugin = <PluginIn extends Plugin<string, NodeType, EdgeType, PluginContext>>(
-    plugin: PluginIn,
+    plugin: () => PluginIn,
   ): GraphBuilder<NodeType, EdgeType, PluginContext> =>
     new GraphBuilder<NodeType, EdgeType, PluginContext>({
       ...this.initializer,
