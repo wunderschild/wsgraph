@@ -32,8 +32,6 @@ export class AutopinPlugin<N extends PinnableNode, E extends ObjectWithId>
 
   private draggingNow = false;
 
-  private afterDraggingQueue: (() => unknown)[] = [];
-
   readonly id = 'autopin';
 
   private readonly onDragStart = ({
@@ -49,11 +47,6 @@ export class AutopinPlugin<N extends PinnableNode, E extends ObjectWithId>
     this.setNodesPinState(nodeIds, true);
 
     this.draggingNow = false;
-    while (!isEmpty(this.afterDraggingQueue)) {
-      const value = this.afterDraggingQueue.shift();
-
-      if (!isNil(value)) value();
-    }
   };
 
   private setNodesPinState(nodeIds: ObjectId[], pin: boolean) {
@@ -103,7 +96,7 @@ export class AutopinPlugin<N extends PinnableNode, E extends ObjectWithId>
       unset(this.pinnedNodes, id);
     }
 
-    this.whenNotDragging(() =>
+    this.ifNotDragging(() =>
       this.setNodesPinState(
         this.dataset?.nodes.getIds().filter(id => this.pinnedNodes[id]) ?? [],
         true,
@@ -111,7 +104,7 @@ export class AutopinPlugin<N extends PinnableNode, E extends ObjectWithId>
     );
   }
 
-  whenNotDragging(action: () => unknown) {
+  ifNotDragging(action: () => unknown) {
     if (!this.draggingNow) {
       action();
     }
