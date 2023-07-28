@@ -1,6 +1,6 @@
 {
   "name": "@wunderschild/wsgraph",
-  "version": "1.0.7",
+  "version": "1.0.7-1",
   "license": "MPL-2.0",
   "type": "module",
   "typesVersions": {
@@ -63,8 +63,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@microsoft/api-extractor": "^7.34.4",
     "@types/classnames": "^2.3.1",
     "@types/lodash-es": "^4.17.6",
@@ -83,6 +81,8 @@
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
     "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup-plugin-dts": "^5.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3",
