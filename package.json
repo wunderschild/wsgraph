@@ -27,6 +27,10 @@
       "import": "./dist/plugins/controls.js",
       "require": "./dist/plugins/controls.cjs"
     },
+    "./plugins/popover": {
+      "import": "./dist/plugins/popover.js",
+      "require": "./dist/plugins/popover.cjs"
+    },
     "./plugins/zoomlimit": {
       "import": "./dist/plugins/zoomlimit.js",
       "require": "./dist/plugins/zoomlimit.cjs"
