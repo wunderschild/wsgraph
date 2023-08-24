@@ -34,6 +34,10 @@
     "./plugins/zoomlimit": {
       "import": "./dist/plugins/zoomlimit.js",
       "require": "./dist/plugins/zoomlimit.cjs"
+    },
+    "./styles": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "scripts": {
