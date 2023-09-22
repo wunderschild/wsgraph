@@ -36,8 +36,7 @@ class ContextMenuPlugin<
   NodeType extends ObjectWithId,
   EdgeType extends ObjectWithId,
   PluginContext,
-> implements Plugin<'context', NodeType, EdgeType, PluginContext>
-{
+> implements Plugin<'context', NodeType, EdgeType, PluginContext> {
   private controller = React.createRef<OverlayController>();
 
   // PluginContext can be undefined (e.g. we don't need any context at all).
@@ -55,21 +54,13 @@ class ContextMenuPlugin<
   constructor(
     private menuConfig: MenuConfig<EventType, PluginContext>,
     private renderer: MenuRenderer,
-  ) {}
+  ) {
+  }
 
   private getTarget(pointer: VisPointerEvent['pointer']): ContextEventTarget {
-    const edgeId = this.engine?.getEdgeAt(pointer.DOM);
-    const nodeId = this.engine?.getNodeAt(pointer.DOM);
-
     const mappedPtr = mapPointer(pointer);
 
-    if (!isNil(edgeId)) {
-      return {
-        type: 'edge',
-        pointer: mappedPtr,
-        data: edgeId,
-      };
-    }
+    const nodeId = this.engine?.getNodeAt(pointer.DOM);
 
     if (!isNil(nodeId)) {
       return {
@@ -79,23 +70,35 @@ class ContextMenuPlugin<
       };
     }
 
+    const edgeId = this.engine?.getEdgeAt(pointer.DOM);
+
+    if (!isNil(edgeId)) {
+      return {
+        type: 'edge',
+        pointer: mappedPtr,
+        data: edgeId,
+      };
+    }
+
     return {
       type: 'canvas',
       pointer: mappedPtr,
     };
   }
 
-  private injectEventData<T extends ContextEventTargetType>(
-    item: MenuItem<string, T, PluginContext> & { type: 'action' },
+  private injectCallback<T extends ContextEventTargetType>(
+    { onTrigger, ...item }: MenuItem<string, T, PluginContext> & { type: 'action' },
     target: CertainContextEventTarget<T>,
   ): RenderedMenuItem {
     return {
       ...item,
       onTrigger: () => {
-        const onTrigger = item.onTrigger;
-
         if (!isNil(onTrigger) && hasValue(this.context)) {
           onTrigger({ target }, this.context.value);
+
+          if (!isNil(this.openedMenu)) {
+            this.controller.current?.destroy(this.openedMenu);
+          }
         }
       },
     };
@@ -106,7 +109,7 @@ class ContextMenuPlugin<
     target: CertainContextEventTarget<T>,
   ) {
     return (menuTemplate || []).map(item =>
-      item.type === 'divider' ? item : this.injectEventData(item, target),
+      item.type === 'divider' ? item : this.injectCallback(item, target),
     );
   }
 
