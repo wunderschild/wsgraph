@@ -52,9 +52,11 @@ export type MenuConfig<EventType extends string, PluginContext> = {
   >;
 };
 
-export const menu = <EventType extends string, PluginContext>(
-  config: MenuConfig<EventType, PluginContext>,
-): MenuConfig<EventType, PluginContext> => config;
+export const menu = <PluginContext>() => ({
+  build: <EventType extends string>(
+    config: MenuConfig<EventType, PluginContext>,
+  ): MenuConfig<EventType, PluginContext> => config,
+});
 
 export const action = <
   EventType extends string,

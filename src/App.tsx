@@ -17,17 +17,18 @@ interface TestNode {
   label: string;
 }
 
-const menuConfig = menu({
-  node: [
-    action({
-      id: 'nodeAdd',
-      text: 'Add node',
-      onTrigger: (event, context) =>
-        console.log('nodeAdd: %O %O', event, context),
-    }),
-    divider(),
-  ],
-});
+const menuConfig = menu()
+  .build({
+    node: [
+      action({
+        id: 'nodeAdd',
+        text: 'Add node',
+        onTrigger: (event, context) =>
+          console.log('nodeAdd: %O %O', event, context),
+      }),
+      divider(),
+    ],
+  });
 
 const contextMenu = () =>
   new ContextMenuPlugin(menuConfig, BasicContextMenuRenderer);
