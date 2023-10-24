@@ -16,15 +16,13 @@ export interface PopoversConfig<T = readonly Popover<string, any>[]> {
 export type PopoverIds<L extends readonly Popover<string, any>[]> =
   L[number]['id'];
 
+export type CertainPopover<L extends readonly Popover<string, any>[], Id extends PopoverIds<L>> =
+  L[number] & { id: Id };
+
 export type PopoverArgs<
   L extends readonly Popover<string, any>[],
   N extends PopoverIds<L>,
-> = L[number] extends Popover<N, infer T> ? T : never;
-
-export type CertainPopover<
-  L extends readonly Popover<string, any>[],
-  N extends PopoverIds<L>,
-> = Popover<N, PopoverArgs<L, N>>;
+> = Parameters<CertainPopover<L, N>['render']>[0];
 
 export interface DisplayedPopover<
   L extends readonly Popover<string, any>[],

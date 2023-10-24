@@ -43,10 +43,16 @@ const controls = () =>
 const popoversConfig = popovers({})
   .popover({
     id: 'newNode',
-    render: (name: string) => (
+    render: ({ name }: { name: string }) => (
       <div style={{ backgroundColor: 'red', padding: 10, color: 'white' }}>
         New node added {name}!
       </div>
+    ),
+  })
+  .popover({
+    id: 'newEdge',
+    render: ({ direction }: { direction: 'to' | 'from' }) => (
+      <div>fuck {direction}</div>
     ),
   })
   .build();
@@ -91,7 +97,7 @@ const App = () => {
         {
           id: 'newNode',
           position: randomPosition({ x: 100, y: 100 }, { x: 350, y: 350 }),
-          args: name,
+          args: { name },
         },
       ],
     });
