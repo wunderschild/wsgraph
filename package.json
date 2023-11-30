@@ -1,6 +1,6 @@
 {
   "name": "@wunderschild/wsgraph",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MPL-2.0",
   "type": "module",
   "typesVersions": {
@@ -12,26 +12,32 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./plugins/autopin": {
+      "types": "./dist/plugins/autopin.d.ts",
       "import": "./dist/plugins/autopin.js",
       "require": "./dist/plugins/autopin.cjs"
     },
     "./plugins/context": {
+      "types": "./dist/plugins/context.d.ts",
       "import": "./dist/plugins/context.js",
       "require": "./dist/plugins/context.cjs"
     },
     "./plugins/controls": {
+      "types": "./dist/plugins/controls.d.ts",
       "import": "./dist/plugins/controls.js",
       "require": "./dist/plugins/controls.cjs"
     },
     "./plugins/popover": {
+      "types": "./dist/plugins/popover.d.ts",
       "import": "./dist/plugins/popover.js",
       "require": "./dist/plugins/popover.cjs"
     },
     "./plugins/zoomlimit": {
+      "types": "./dist/plugins/zoomlimit.d.ts",
       "import": "./dist/plugins/zoomlimit.js",
       "require": "./dist/plugins/zoomlimit.cjs"
     },
